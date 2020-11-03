@@ -13,9 +13,9 @@
 
 
 ## memo table
-| Column     | Type | Options     |
-|------------|------|-------------|
-| memo_text  | text | null:false  |
+| Column     | Type |
+|------------|------|
+| memo_text  | text |
 
 ## Association
 - belongs_to :user
