@@ -13,9 +13,10 @@
 
 
 ## memo table
-| Column     | Type |
-|------------|------|
-| memo_text  | text |
+| Column     | Type       | Options           |
+|------------|------------|-------------------|
+| memo_text  | text       | null:false        |
+| user       | references | foreign_key: true |
 
 ## Association
 - belongs_to :user
