@@ -6,5 +6,11 @@ class User < ApplicationRecord
   
   has_many :memos
 
-  validates :user_name, presence: true, length: { maximum: 30 }
+  with_options presence: true do
+    validates :user_name, length: { maximum: 30 }
+    validates :password, length: { minimum: 6 }
+
+    PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+    validates_format_of :password, with: PASSWORD_REGEX
+  end
 end
