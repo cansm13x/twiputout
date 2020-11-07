@@ -1,4 +1,4 @@
-
+<% if user_signed_in? && current_user.id %>
   <% @memos.each do |memo| %>
     <div class="contents row">
       <div class="container">
@@ -21,3 +21,4 @@
       </div>
     </div>
   <% end %>
+<% end %>
