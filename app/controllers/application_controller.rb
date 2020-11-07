@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  # before_action :authenticate_user!
   before_action :configre_permitted_parameters, if: :devise_controller?
 
   def configre_permitted_parameters

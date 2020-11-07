@@ -1,5 +1,11 @@
 class MemosController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
+
   def index
+  end
+
+  def new
+    @memo = Memo.new
   end
 
   private
