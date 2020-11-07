@@ -1,5 +1,5 @@
-<% if user_signed_in? && current_user.id %>
-  <% @memos.each do |memo| %>
+<% @memos.each do |memo| %>
+  <% if user_signed_in? && current_user.id == memo.user.id%>
     <div class="contents row">
       <div class="container">
         <span class="name">
