@@ -19,6 +19,7 @@ class MemosController < ApplicationController
   end
 
   def edit
+    @memo = Memo.find(params[:id])
   end
 
   private
