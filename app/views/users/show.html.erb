@@ -1,3 +1,21 @@
 <div class="contents row">
-  <p><%= @user.user_name %>さんのマイページ</p>
+  <div class="container">
+    <%# <div class="user__wrapper"> %>
+      <h1 class="page-heading">
+        <%= "#{@user.user_name}さんのマイページ" %>
+      </h1>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">User Name</th>
+            <td class="table__col2"><%= @user.user_name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">Email</th>
+            <td class="table__col2"><%= @user.email %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
