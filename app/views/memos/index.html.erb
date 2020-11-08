@@ -8,7 +8,7 @@
         <span class="memo-date">
           <%= memo.created_at.strftime("%Y-%m-%d %H:%M") %>
         </span>
-        <p><%= memo.memo_text %></p>
+        <p><%= simple_format(memo.memo_text) %></p>
         <%= image_tag memo.image, class: "memo-imag" if memo.image.attached? %>
         <div class="more">
           <ul class="more_list">
