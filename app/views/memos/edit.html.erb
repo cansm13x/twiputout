@@ -1,7 +1,7 @@
 <div class="contents row">
   <div class="container">
     <h3>EDITING MEMO</h3>
-    <%= form_with model: @memo, url: memos_path,local: true do |form| %>
+    <%= form_with model: @memo, local: true do |form| %>
       <%= form.text_area :memo_text, placeholder: "text", rows: "10" %>
       <%= form.file_field :image, id: "image" %>
       <%= form.submit "SEND" %>
