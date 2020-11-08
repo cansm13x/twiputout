@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!, only: [:show, :edit, :update]
   before_action :set_user, only: [:show]
   before_action :redirect_root, only: [:show]
 
