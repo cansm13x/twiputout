@@ -13,7 +13,7 @@
         <div class="more">
           <ul class="more_list">
             <% if user_signed_in? && current_user.id == memo.user_id %>
-              <li><%= link_to ':edit', "#", method: :get %></li>
+              <li><%= link_to ':edit', edit_memo_path(memo.id), method: :get %></li>
               <li><%= link_to ':delete', "#", method: :delete %></li>
             <% end %>
           </ul>
