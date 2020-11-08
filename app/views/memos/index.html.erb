@@ -1,24 +1,36 @@
-<% @memos.each do |memo| %>
-  <% if user_signed_in? && current_user.id == memo.user.id%>
-    <div class="contents row">
-      <div class="container">
-        <span class="name">
-          <b><%= memo.user.user_name %></b>
-        </span>
-        <span class="memo-date">
-          <%= memo.created_at.strftime("%Y-%m-%d %H:%M") %>
-        </span>
-        <p><%= simple_format(memo.memo_text) %></p>
-        <%= image_tag memo.image, class: "memo-imag" if memo.image.attached? %>
-        <div class="more">
-          <ul class="more_list">
-            <% if user_signed_in? && current_user.id == memo.user_id %>
-              <li><%= link_to ':edit', edit_memo_path(memo.id), method: :get %></li>
-              <li><%= link_to ':delete', memo_path(memo.id), method: :delete %></li>
-            <% end %>
-          </ul>
+<% if user_signed_in? %>
+  <% @memos.each do |memo| %>
+    <% if current_user.id == memo.user.id %>
+      <div class="contents row">
+        <div class="container">
+          <span class="name">
+            <b><%= memo.user.user_name %></b>
+          </span>
+          <span class="memo-date">
+            <%= memo.created_at.strftime("%Y-%m-%d %H:%M") %>
+          </span>
+          <p><%= simple_format(memo.memo_text) %></p>
+          <%= image_tag memo.image, class: "memo-imag" if memo.image.attached? %>
+          <div class="more">
+            <ul class="more_list">
+              <% if user_signed_in? && current_user.id == memo.user_id %>
+                <li><%= link_to ':edit', edit_memo_path(memo.id), method: :get %></li>
+                <li><%= link_to ':delete', memo_path(memo.id), method: :delete %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
+<% else %>
+  <div class="contents row">
+    <div class="container">
+      <h1> Let's start Twi put out ! </h1>
+        <h2>新規登録ボタンからアカウントを登録しよう</h2>
+        <h2>ユーザーネーム、email、パスワードで簡単登録</h2>
+        <h2>アイデアメモ、日記や記録帳、ふとしたメモなどにオススメ</h2>
+    </div>
+  </div>
 <% end %>
+
