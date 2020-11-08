@@ -1,6 +1,6 @@
 class MemosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update, :destroy]
 
   def index
     @memos = Memo.includes(:user).order('created_at DESC')
@@ -28,6 +28,11 @@ class MemosController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @memo.destroy
+    redirect_to root_path
   end
 
   private
