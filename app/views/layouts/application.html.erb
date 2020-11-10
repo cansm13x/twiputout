@@ -18,7 +18,7 @@
           <span><%= current_user.user_name %>
             <ul class="user__info">
               <li>
-                <%= link_to "マイページ", "#" %>
+                <%= link_to "マイページ", user_path(current_user.id) %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
               </li>
             </ul>

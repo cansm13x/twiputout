@@ -1,0 +1,21 @@
+
+  <div class="contents row">
+    <div class="container">
+      <h1 class="page-heading">
+        <%= "#{@user.user_name}'s Profile " %>
+      </h1>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">User Name</th>
+            <td class="table__col2"><%= @user.user_name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">Email</th>
+            <td class="table__col2"><%= @user.email %></td>
+          </tr>
+        </tbody>
+      </table>
+      <%= link_to ":edit", edit_user_registration_path(current_user) %>
+    </div>
+  </div>
