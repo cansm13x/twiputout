@@ -1,0 +1,2 @@
+class FavMemosController < ApplicationController
+end
