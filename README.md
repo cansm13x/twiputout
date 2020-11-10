@@ -20,7 +20,7 @@
 
 ## Association
 - belongs_to :user
-- has_many :memos
+- has_many :fav_memos
 
 
 ## fav_memo table
