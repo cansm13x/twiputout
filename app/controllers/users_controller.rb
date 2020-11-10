@@ -1,21 +1,15 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:show]
   before_action :set_user, only: [:show]
   before_action :redirect_root, only: [:show]
 
   def show
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   private
 
   def user_params
-    params.require(:user).permit(:user_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:user_name, :email)
   end
 
   def set_user
