@@ -9,6 +9,9 @@
           <span class="memo-date">
             <%= memo.created_at.strftime("%Y-%m-%d %H:%M") %>
           </span>
+          <div id="likes_buttons_<%= memo.id %>">
+             <%= render partial: 'fav_memos/fav_memo', locals: { memo: memo} %>
+          </div>
           <p><%= simple_format(memo.memo_text) %></p>
           <%= image_tag memo.image, class: "memo-imag" if memo.image.attached? %>
           <div class="more">
