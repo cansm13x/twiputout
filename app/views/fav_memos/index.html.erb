@@ -9,7 +9,7 @@
           <%= fav_memo.memo.created_at.strftime("%Y-%m-%d %H:%M") %>
         </span>
         <p><%= simple_format(fav_memo.memo.memo_text) %></p>
-        <%= image_tag fav_memo.memo.image, class: "memo-imag" if fav_memo.memo.image.attached? %>
+        <%= image_tag fav_memo.memo.image, class: "memo-image" if fav_memo.memo.image.attached? %>
         <div class="more">
           <ul class="more_list">
             <li><%= link_to ':edit', edit_memo_path(fav_memo.memo.id), method: :get %></li>
