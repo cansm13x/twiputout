@@ -1,6 +1,10 @@
 class FavMemosController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authenticate_user!, only: [:create, :destroy, :index]
   before_action :set_memo, only: [:create, :destroy]
+
+  def index
+    @fav_memos = FavMemo.includes(:user, :memo).order('created_at DESC')
+  end
 
   def create
     fav_memo = current_user.fav_memos.build(memo_id: params[:memo_id])

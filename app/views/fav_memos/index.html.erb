@@ -1,0 +1,31 @@
+<div class="contents row">
+  <% @fav_memos.each do |fav_memo| %>
+    <% if current_user.id == fav_memo.user.id %>
+      <div class="container">
+        <span class="name">
+          <b><%= fav_memo.memo.user.user_name %></b>
+        </span>
+        <span class="memo-date">
+          <%= fav_memo.memo.created_at.strftime("%Y-%m-%d %H:%M") %>
+        </span>
+        <p><%= simple_format(fav_memo.memo.memo_text) %></p>
+        <%= image_tag fav_memo.memo.image, class: "memo-imag" if fav_memo.memo.image.attached? %>
+        <div class="more">
+          <ul class="more_list">
+            <li><%= link_to ':edit', edit_memo_path(fav_memo.memo.id), method: :get %></li>
+            <li><%= link_to ':delete', memo_path(fav_memo.memo.id), method: :delete %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+    <%# お気に入りメモが登録されていない場合に表示する。追加実装予定。 %>
+    <%# <% if FavMemo.exists?(user_id: fav_memo.id) %>
+      <%# <div class="contents row">
+        <div class="container">
+          <h2>お気に入りは登録されていません。</h2>
+        </div>
+      </div> %>
+    <%# <% end %>
+    <%# お気に入りメモが登録されていない場合に表示する。追加実装予定。 %>
+  <% end %>
+</div>

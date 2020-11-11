@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resource :fav_memos, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit, :update]
+  resources :fav_memos, only: [:index]
 end
