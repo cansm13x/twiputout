@@ -5,6 +5,7 @@ class CreateFavMemos < ActiveRecord::Migration[6.0]
       t.references :memo, foreign_key: true, null: false
 
       t.timestamps
+      t.index [:user_id, :memo_id], unique: true
     end
   end
 end

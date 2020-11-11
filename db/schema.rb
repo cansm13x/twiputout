@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_11_10_114633) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["memo_id"], name: "index_fav_memos_on_memo_id"
+    t.index ["user_id", "memo_id"], name: "index_fav_memos_on_user_id_and_memo_id", unique: true
     t.index ["user_id"], name: "index_fav_memos_on_user_id"
   end
 
