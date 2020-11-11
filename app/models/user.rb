@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :memos
-  has_many :fav_memo, dependent: :destroy 
+  has_many :fav_memos, dependent: :destroy 
 
   validates :user_name, presence: true, length: { maximum: 30 }
   validates :password, length: { minimum: 6 }
