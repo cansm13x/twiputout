@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "FavMemos", type: :request do
-
+RSpec.describe 'FavMemos', type: :request do
 end

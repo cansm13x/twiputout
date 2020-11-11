@@ -5,12 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :memos
-  has_many :fav_memos, dependent: :destroy 
+  has_many :fav_memos, dependent: :destroy
 
   validates :user_name, presence: true, length: { maximum: 30 }
   validates :password, length: { minimum: 6 }
 
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX
 
   # current_passwordの入力を不要にする追加実装検討中のため
@@ -26,5 +26,4 @@ class User < ApplicationRecord
   #   clean_up_passwords
   #   result
   # end
-
 end
